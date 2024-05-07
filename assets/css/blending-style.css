@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap');
+#slideshow {
+    width: 1200px;
+    height: 500px;
+    border: solid 1px #abf303;
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.4s;
+    position: relative;
+    box-shadow: 0 0 2px 2px #0676df;
+}
+
+#slideshow img {
+    position: absolute;
+    height: 90px;
+    opacity: 1;
+}
+
+#slideshow img.left {
+    left: 8px;
+    width: 40px;
+    height: 40px;
+    margin-top: 510px;
+}
+
+#slideshow img.right {
+    left: 1150px;
+    width: 40px;
+    height: 40px;
+    margin-top: 510px;
+}
+
+#filmstrip {
+    height: 50px;
+    width: 1060px;
+    margin: 5px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    border: 1px;
+    border-color: blue;
+    overflow: hidden;
+    overflow-x: scroll;
+    padding: 2px;
+}
+
+#filmstrip img {
+    display: flex;
+    height: 40px;
+    width: 90px;
+    margin-right: 6px;
+    border: 10px;
+    border-color: black;
+}
+
+.bordered {
+    box-shadow: 0 0 1px 1px #004587;
+}
+
+.blending-main {
+    width: 1250px;
+    margin: 5px auto;
+    height: 500px;
+}
+
+.slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+}
+
+.canvas {
+    position: absolute;
+    top: 45px;
+    align-items: center;
+    width: 1250px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.btn-home {
+    width: 100px;
+    height: 30px;
+    background-color: #009ed6;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    font-family: 'Battambang', cursive;
+    
+}
+
+.btn-home:hover {
+    background-color: #004587;
+    color: #FFBF00;
+    font-size: larger;
+    align-content: center;
+}
+
+/* .buttoncounter {
+    width: 120px;
+    height: 100px;
+    position: fixed;
+    margin-top: 150px;
+    margin-left: 100px;
+    border: none;
+    background-color: transparent;
+} */
+
+/* #button {
+    width: 120px;
+    height: 50px;
+    background-color: #118DFF;
+    border-radius: 5px;
+    color: white;
+    font-size: larger;
+    text-align: center;
+}
+
+#button:hover {
+    width: 120px;
+    height: 50px;
+    background-color: greenyellow;
+    border-radius: 5px;
+
+    font-size: larger;
+    align-content: center;
+} */
+
+#container1.canvas {
+    width: 50px;
+    height: 50px;
+}
+
+.color {
+    width: 100px;
+    height: 30px;
+    border-radius: 10%;
+}
+
+.color1 {
+    width: 100px;
+    height: 30px;
+    /* border-radius: 50%; */
+}
+
+.color1:hover{
+    border: 100px, solid;
+    border-color: #009ed6;
+}
+
+.color:hover {
+    width: 100px;
+    height: 30px;
+    border-radius: 1%;
+    border-color: rgb(255, 80, 5);
+    border: 2px;
+}
+
+.margin-top{
+    margin-top: px;
+}
+.margin-canva-top{
+    margin-top: 0px;
+}
+.top{
+    width: 1250px;
+    height: 40px;
+    
+}
+.book {
+    width: 100px;
+    height: 30px;
+    background-color: #4b024f;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+    font-family: 'Battambang', cursive;
+}
+
+.book:hover {
+    background-color: #004587;
+    color: #FFBF00;
+    font-size: 15px;
+    align-content: center;
+}

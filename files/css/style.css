@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap');
+@font-face {
+	font-family: Battambang-Bold;
+	src: url(../../../../wowbook/fonts/Battambang-Bold.ttf);
+	font-family: Battambang-Light;
+	src: url(../../../../wowbook/fonts/Battambang-Light.ttf);
+  }
+  
+
+body{
+	font-family: 'Battambang', cursive;
+}
+
+.khmerFont{
+	font-family: 'Battambang', cursive;
+}
+
+.khmerFont-moul{
+	font-family: 'Moul', cursive;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Battambang', cursive;
+}
+
+.container{
+	position: relative;
+	text-align: center;
+}
+
+.box-cover{
+	position: absolute;
+	top: 32%;
+	left: 75%;
+}
+
+
+.box-cover-s{
+	position: absolute;
+	top: 57%;
+	left: 60%;
+}
+
+
+.box-cover-book-s{
+	position: absolute;
+	top: 62%;
+	left: 58%;
+}
+
+.box-cover-dog-s{
+	position: absolute;
+	top: 62%;
+	left: 59%;
+}
+
+.box-cover-flower-s{
+	position: absolute;
+	top: 62%;
+	left: 62%;
+}
+
+.box-cover-teacher{
+	position: absolute;
+	top: 30%;
+	left: 65%;
+}
+
+.box-cover-teacher-s{
+	position: absolute;
+	top: 60%;
+	left: 57%;
+}
+
+.box-cover-book,
+.box-cover-tree{
+	position: absolute;
+	top: 32%;
+	left: 70%;
+}
+
+.box-cover-dog,
+.box-cover-flower {
+	position: absolute;
+	top: 32%;
+	left: 78%;
+}
+
+.box-cover-pic {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+button {
+	padding: 0;
+border: none;
+}
+
+button:focus { outline: none; }
+
+
+.text-sm{
+	position: absolute; 
+	width: auto;
+	height: auto;
+	margin-top: 45%; 
+	left: 30px; 
+	font-size: 2.5em;
+}
+
+.slide-img{
+	margin-top: 40px;
+	width: 400px;
+	height: 340px;
+}
+
+.copyright{
+	margin-top: 40px;
+	text-align: center;
+	color: #004587;
+}
+
+
+.hide_word_lg{
+	position: absolute; 
+	left: 40px;
+	border-radius: 6px;
+	width: 180px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.hide_word_sm{
+	position: absolute; 
+	left: 40px;
+	border-radius: 6px;
+	width: 90px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.hide_word_x110{
+	position: absolute; 
+	left: 40px;
+	border-radius: 6px;
+	width: 110px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+br{
+	line-height: 12vh;
+}
+
+#btn-pic{
+	width: 415px; 
+	height: 425px; 
+	border-radius: 8px;
+	background-color: #FDD017;
+}
+
+.subtext-sm{
+	position: absolute;
+	margin-top: 80%;
+	left: 30px;
+	font-size: 0.6em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-sms{
+	position: absolute; 
+	width: auto;
+	height: auto;
+	margin-top: 40%; 
+	left: 30px; 
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub-text{
+	position: absolute;
+	width: 100%;
+	top: 80%;
+	font-size: medium;
+	text-align: center;
+	margin-left: auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sub-text-hide{
+	position: absolute;
+	width: 100%;
+	top: 80%;
+	font-size: medium;
+	margin-left: 30%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.Sub_hide_word{
+	width: 10%;
+	position: absolute;
+	top: 80%;
+	font-size: medium;
+	border-radius: 2px;
+	padding-left: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.hide_word{
+	position: absolute; 
+	width: 10%;
+	height: auto;
+	border-radius: 4px;
+	width: 70px;
+	padding-left: 10px;
+	padding-right: 10px;
+	z-index: auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-lg{
+	position: absolute; 
+	width: auto;
+	height: auto;
+	margin-top: 30%; 
+	margin-left: 5%; 
+	line-height: 60px;
+	font-size: 2.5em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-home{
+	position: absolute; 
+	width: auto;
+	height: auto;
+	margin-top: 83%; 
+	margin-left: 40px; 
+	line-height: 60px;
+	font-size: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.Battambang{
+	font-family: 'Battambang', cursive;
+}
