@@ -1,75 +1,94 @@
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-    $(window).bind('hashchange', function () {
-        closeBox();
-        var parts = window.location.pathname.substring(window.location.pathname.lastIndexOf('features') + 1);
-        console.log(parts);
-    });
+  window.addEventListener('hashchange', function () {
+    closeBox();
+    const parts = window.location.pathname.substring(window.location.pathname.lastIndexOf('features') + 1);
+    console.log(parts);
+  });
 
-    $('#features').wowBook({
-        height: 460 // use image 460px
-        , width: 850 // use image 425px
-        , centeredWhenClosed: true
-        , hardcovers: true
-        , turnPageDuration: 1000
-        , numberedPages: [1, -2]
-        , controls: {
-            zoomIn: '#zoomin',
-            zoomOut: '#zoomout',
-            next: '#next',
-            back: '#back',
-            first: '#first',
-            last: '#last',
-            slideShow: '#slideshow',
-            flipSound: '#flipsound',
-            thumbnails: '#thumbs',
-            fullscreen: '#fullscreen'
-        }
-        , scaleToFit: "#container"
-        , thumbnailsPosition: 'bottom'
-        , onFullscreenError: function () {
-            var msg = "Fullscreen failed.";
-            if (self != top) msg = "The frame is blocking full screen mode. Click on 'remove frame' button above and try to go full screen again."
-            alert(msg);
-        }
-    }).css({ 'display': 'none', 'margin': 'auto' }).fadeIn(1000);
-
-    $("#cover").click(function () {
-        $.wowBook("#features").advance();
-    });
-
-    var book = $.wowBook("#features");
-    function rebuildThumbnails() {
-        book.destroyThumbnails()
-        book.showThumbnails()
-        $("#thumbs_holder").css("marginTop", -$("#thumbs_holder").height() / 2)
+  const features = document.getElementById('features');
+  wowBook(features, {
+    height: 460,
+    width: 850,
+    centeredWhenClosed: true,
+    hardcovers: true,
+    turnPageDuration: 1000,
+    numberedPages: [1, -2],
+    controls: {
+      zoomIn: document.querySelector('#zoomin'),
+      zoomOut: document.querySelector('#zoomout'),
+      next: document.querySelector('#next'),
+      back: document.querySelector('#back'),
+      first: document.querySelector('#first'),
+      last: document.querySelector('#last'),
+      slideShow: document.querySelector('#slideshow'),
+      flipSound: document.querySelector('#flipsound'),
+      thumbnails: document.querySelector('#thumbs'),
+      fullscreen: document.querySelector('#fullscreen')
+    },
+    scaleToFit: document.getElementById("container"),
+    thumbnailsPosition: 'bottom',
+    onFullscreenError: function () {
+      const msg = "Fullscreen failed.";
+      if (window !== window.parent) {
+        msg = "The frame is blocking full screen mode. Click on 'remove frame' button above and try to go full screen again."
+      }
+      alert(msg);
     }
-    $("#thumbs_position button").on("click", function () {
-        var position = $(this).text().toLowerCase()
+  });
 
-        if ($(this).data("customized")) {
-            position = "top"
-            book.opts.thumbnailsParent = "#thumbs_holder";
-        } else {
-            book.opts.thumbnailsParent = "body";
-        }
-        book.opts.thumbnailsPosition = position
-        rebuildThumbnails();
-    })
-    $("#thumb_automatic").click(function () {
-        book.opts.thumbnailsSprite = null
-        book.opts.thumbnailWidth = null
-        rebuildThumbnails();
-    })
-    $("#thumb_sprite").click(function () {
-        book.opts.thumbnailsSprite = "images/thumbs.jpg"
-        book.opts.thumbnailWidth = 136
-        rebuildThumbnails();
-    })
-    $("#thumbs_size button").click(function () {
-        var factor = 0.02 * ($(this).index() ? -1 : 1);
-        book.opts.thumbnailScale = book.opts.thumbnailScale + factor;
-        rebuildThumbnails();
-    })
+  features.style.display = 'none';
+  features.style.margin = 'auto';
+  features.classList.add('fadeIn'); // Assuming you have a fadeIn class for animation (replace with your library)
+  setTimeout(() => features.classList.remove('fadeIn'), 1000); // Simulate fadeIn effect after 1 second
+
+  const cover = document.getElementById("cover");
+  cover.addEventListener("click", function () {
+    const book = wowBook(features);
+    book.advance();
+  });
+
+  let book;
+
+  function rebuildThumbnails() {
+    const wowBookInstance = wowBook(features);
+    wowBookInstance.destroyThumbnails();
+    wowBookInstance.showThumbnails();
+    const thumbsHolder = document.getElementById("thumbs_holder");
+    thumbsHolder.style.marginTop = -thumbsHolder.offsetHeight / 2;
+  }
+
+  const thumbsPositionButtons = document.querySelectorAll("#thumbs_position button");
+  thumbsPositionButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const position = button.textContent.toLowerCase();
+      book.opts.thumbnailsParent = (button.dataset.customized) ? "#thumbs_holder" : "body";
+      book.opts.thumbnailsPosition = position;
+      rebuildThumbnails();
+    });
+  });
+
+  const thumbAutomatic = document.getElementById("thumb_automatic");
+  thumbAutomatic.addEventListener("click", function () {
+    book.opts.thumbnailsSprite = null;
+    book.opts.thumbnailWidth = null;
+    rebuildThumbnails();
+  });
+
+  const thumbSprite = document.getElementById("thumb_sprite");
+  thumbSprite.addEventListener("click", function () {
+    book.opts.thumbnailsSprite = "images/thumbs.jpg";
+    book.opts.thumbnailWidth = 136;
+    rebuildThumbnails();
+  });
+
+  const thumbsSizeButtons = document.querySelectorAll("#thumbs_size button");
+  thumbsSizeButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const factor = 0.02 * (button.index ? -1 : 1);
+      book.opts.thumbnailScale += factor;
+      rebuildThumbnails();
+    });
+  });
 
 });
